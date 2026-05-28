@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" width="360" height="100" role="img" aria-label="Recruta AI">
+  <text x="0" y="72" font-family="Instrument Serif, serif" font-size="80" font-weight="400" letter-spacing="-2.5" fill="#0E0F0C">Recruta</text>
+  <text x="198" y="72" font-family="Instrument Serif, serif" font-size="80" font-weight="400" font-style="italic" letter-spacing="-2.5" fill="#0E0F0C">AI</text>
+  <circle cx="288" cy="64" r="5" fill="#0E0F0C"></circle>
+</svg>
