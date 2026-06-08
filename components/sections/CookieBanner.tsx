@@ -1,21 +1,29 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+const STORAGE_KEY = 'recruta-cookies-ok'
 
 export function CookieBanner() {
-  const [open, setOpen] = useState(() => {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
     try {
-      return localStorage.getItem('recruta-cookies-ok') !== '1'
+      setOpen(localStorage.getItem(STORAGE_KEY) !== '1')
     } catch {
-      return true
+      setOpen(true)
     }
-  })
+  }, [])
 
-  if (!open) return null
-
-  const accept = () => {
-    try { localStorage.setItem('recruta-cookies-ok', '1') } catch {}
+  const dismiss = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, '1')
+    } catch {
+      // ignore private mode / blocked storage
+    }
     setOpen(false)
   }
+
+  if (!open) return null
 
   return (
     <div className="cookie-banner" role="dialog" aria-label="Aviso de cookies">
@@ -25,13 +33,14 @@ export function CookieBanner() {
       </span>
       <div className="cookie-banner__btns">
         <button
+          type="button"
           className="btn btn-secondary btn-sm"
-          onClick={accept}
+          onClick={dismiss}
           style={{ color: 'var(--linen)', borderColor: 'rgba(244,241,234,0.25)', background: 'transparent' }}
         >
           Recusar
         </button>
-        <button className="btn btn-gold btn-sm" onClick={accept}>
+        <button type="button" className="btn btn-gold btn-sm" onClick={dismiss}>
           Tudo bem
         </button>
       </div>
