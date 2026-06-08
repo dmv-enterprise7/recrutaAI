@@ -23,7 +23,7 @@ export function Navbar() {
         </nav>
 
         <div className="nav-right">
-          <a href={WA_LINK('Grupo VIP')} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={WA_LINK('Basic')} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Falar no WhatsApp
           </a>
           <button
@@ -55,7 +55,7 @@ export function Navbar() {
         <a href="#recrutador" onClick={() => setOpen(false)}>Recrutadores</a>
         <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
         <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-          <a href={WA_LINK('Grupo VIP')} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={WA_LINK('Basic')} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Falar no WhatsApp
           </a>
         </div>
