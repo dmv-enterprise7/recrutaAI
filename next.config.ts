@@ -1,16 +1,16 @@
 import type { NextConfig } from 'next'
 
 /**
- * GitHub Pages project site: assets must live under /{repo}/.
- * When recruta.ai DNS is pointed at GitHub, remove basePath + restore public/CNAME.
+ * GITHUB_PAGES=true → build para o project site do GitHub Pages (assets sob /{repo}/).
+ * Build padrão → domínio próprio (Cloudflare Pages), sem basePath.
  */
 const repo = 'recrutaAI'
-const basePath = `/${repo}`
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+const basePath = isGitHubPages ? `/${repo}` : ''
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath,
-  assetPrefix: basePath,
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   trailingSlash: true,
   images: { unoptimized: true },
 }
