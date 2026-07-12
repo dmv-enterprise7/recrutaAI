@@ -16,7 +16,7 @@ export function WellingtonV2() {
           <div className="well__photo reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/wellington.png"
+              src="/wellington.jpg"
               alt="Wellington Martins, engenheiro de planejamento, fundador-personagem da Recruta AI"
               loading="lazy"
             />

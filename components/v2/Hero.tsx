@@ -131,7 +131,7 @@ export function HeroV2() {
             <span>Sem cartão</span>
             <span className="dot">·</span>
             <span>
-              <b>8 vagas</b> por dia no seu e-mail
+              <b>3 vagas</b> por dia no seu e-mail
             </span>
             <span className="dot">·</span>
             <span>
