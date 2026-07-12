@@ -5,7 +5,7 @@
    aumenta outro. Demos no estilo calmo do painel de score. */
 import { useState, type ReactNode } from 'react'
 import { Mic, PenLine, Radar, ScanLine, TrendingUp, type LucideIcon } from 'lucide-react'
-import { WA_LINK } from '@/lib/constants'
+import { WA_TEXT } from '@/lib/constants'
 import { ArrowIcon, SecHead } from './parts'
 
 /* ============================ DEMOS (limpas, estáticas) ============================ */
@@ -149,17 +149,21 @@ function FrenteDemo() {
 
 interface Feature {
   icon: LucideIcon
+  step: string
   title: string
   teaser: string
   desc: ReactNode
   demo: ReactNode
+  cta: string
+  wa: string
 }
 
 const FEATURES: Feature[] = [
   {
     icon: ScanLine,
+    step: 'Diagnóstico',
     title: 'Saiba por que te barram',
-    teaser: 'Seu score nos 6 eixos, explicado',
+    teaser: 'Seu score nos 6 eixos',
     desc: (
       <>
         Você sobe seu currículo e em 2 minutos recebe uma nota de 0 a 100 nos <b>6 eixos que a triagem realmente olha</b>.
@@ -168,9 +172,12 @@ const FEATURES: Feature[] = [
       </>
     ),
     demo: <ScoreDemo />,
+    cta: 'Ver meu score grátis',
+    wa: 'Oi! Quero ver meu score grátis no Recruta AI.',
   },
   {
     icon: PenLine,
+    step: 'Reposicionamento',
     title: 'Reescrito na língua do mercado',
     teaser: 'A IA fala como quem contrata',
     desc: (
@@ -181,9 +188,12 @@ const FEATURES: Feature[] = [
       </>
     ),
     demo: <RewriteDemo />,
+    cta: 'Reescrever meu currículo',
+    wa: 'Oi! Quero reescrever meu currículo na língua do mercado com o Recruta AI.',
   },
   {
     icon: Mic,
+    step: 'Preparo',
     title: 'Treine a entrevista antes',
     teaser: 'Ensaie por voz com o Axcel',
     desc: (
@@ -193,11 +203,14 @@ const FEATURES: Feature[] = [
       </>
     ),
     demo: <InterviewDemo />,
+    cta: 'Treinar minha entrevista',
+    wa: 'Oi! Quero treinar pra entrevista com o Axcel do Recruta AI.',
   },
   {
     icon: Radar,
+    step: 'Vagas',
     title: 'Vagas do seu setor, garimpadas',
-    teaser: 'Óleo & gás, no seu radar',
+    teaser: 'Óleo & gás no seu radar',
     desc: (
       <>
         A gente garimpa vagas específicas de óleo &amp; gás em várias fontes e cruza com o <b>seu perfil e a sua
@@ -206,9 +219,12 @@ const FEATURES: Feature[] = [
       </>
     ),
     demo: <VagasDemo />,
+    cta: 'Receber vagas do meu setor',
+    wa: 'Oi! Quero receber vagas de óleo & gás no meu e-mail pelo Recruta AI.',
   },
   {
     icon: TrendingUp,
+    step: 'Recolocação',
     title: 'Reposicionado, você aparece na frente',
     teaser: 'O recrutador vem até você',
     desc: (
@@ -218,6 +234,8 @@ const FEATURES: Feature[] = [
       </>
     ),
     demo: <FrenteDemo />,
+    cta: 'Aparecer pros recrutadores',
+    wa: 'Oi! Quero aparecer pros recrutadores no banco de talentos do Recruta AI.',
   },
 ]
 
@@ -239,41 +257,49 @@ export function FeaturesV2() {
         />
 
         <div className="showcase reveal">
-          <div className="showcase__list" role="tablist" aria-label="Recursos da Recruta AI">
-            {FEATURES.map((item, i) => {
-              const Icon = item.icon
-              const on = i === active
-              return (
-                <button
-                  key={item.title}
-                  role="tab"
-                  aria-selected={on}
-                  className={`sc-item ${on ? 'is-active' : ''}`}
-                  onClick={() => setActive(i)}
-                >
-                  <span className="sc-item__ic">
-                    <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
-                  </span>
-                  <span className="sc-item__txt">
-                    <span className="sc-item__title">{item.title}</span>
-                    <span className="sc-item__teaser">{item.teaser}</span>
-                  </span>
-                  <span className="sc-item__chevron" aria-hidden="true">
-                    <ArrowIcon />
-                  </span>
-                </button>
-              )
-            })}
+          {/* fluxo horizontal — ordem dos acontecimentos, do diagnóstico à recolocação */}
+          <div className="flow-scroll">
+            <div className="flow" role="tablist" aria-label="Etapas da Recruta AI">
+              <div className="flow__track" aria-hidden="true">
+                <span
+                  className="flow__track-fill"
+                  style={{ width: `${(active / (FEATURES.length - 1)) * 100}%` }}
+                />
+              </div>
+              {FEATURES.map((item, i) => {
+                const Icon = item.icon
+                const on = i === active
+                const done = i < active
+                return (
+                  <button
+                    key={item.title}
+                    role="tab"
+                    aria-selected={on}
+                    className={`flow-step ${on ? 'is-active' : ''} ${done ? 'is-done' : ''}`}
+                    onClick={() => setActive(i)}
+                  >
+                    <span className="flow-step__dot">
+                      <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
+                      <span className="flow-step__num">{String(i + 1).padStart(2, '0')}</span>
+                    </span>
+                    <span className="flow-step__label">{item.step}</span>
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           <div className="showcase__panel" role="tabpanel">
             <div className="sc-panel" key={active}>
               <div className="sc-panel__demo">{f.demo}</div>
               <div className="sc-panel__body">
+                <span className="sc-panel__step">
+                  {String(active + 1).padStart(2, '0')} · {f.step}
+                </span>
                 <h3 className="sc-panel__title">{f.title}</h3>
                 <p className="sc-panel__desc">{f.desc}</p>
-                <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
-                  <span>Ver meu score grátis</span>
+                <a href={WA_TEXT(f.wa)} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+                  <span>{f.cta}</span>
                   <ArrowIcon />
                 </a>
               </div>

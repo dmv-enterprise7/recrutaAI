@@ -5,6 +5,10 @@ export const WA_LINK = (planName: string) =>
     `Oi, vim da landing do Recruta AI e tenho interesse no plano ${planName}.`
   )}`
 
+/* Link de WhatsApp com mensagem livre (CTAs contextuais por card/seção). */
+export const WA_TEXT = (message: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`
+
 export const VITOR_WA = `https://wa.me/5521973495805?text=${encodeURIComponent(
   'Oi Vitor, vim pela landing do Recruta AI e queria entender o acesso de recrutador.'
 )}`
