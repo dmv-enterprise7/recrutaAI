@@ -50,7 +50,7 @@ export function CTAFinalV2() {
         </p>
         <div className="cta-v2__ctas">
           <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
-            <span>Ver meu score grátis</span>
+            <span>Quero procurar uma oportunidade</span>
             <ArrowIcon />
           </a>
           <a href={WA_LINK('Falar com a gente')} target="_blank" rel="noopener" className="btn btn-textlink btn-lg">
