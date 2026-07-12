@@ -39,7 +39,7 @@ export function FAQV2() {
         <div className="faq2">
           <div className="faq2__intro reveal">
             <SecHead
-              eyebrow="08 · Perguntas diretas"
+              eyebrow="07 · Perguntas diretas"
               title={
                 <>
                   O que você deve estar <em>se perguntando</em>.

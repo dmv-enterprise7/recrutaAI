@@ -99,9 +99,6 @@ export function FooterV2() {
           <h4>Ecossistema DMV</h4>
           <ul>
             <li>
-              <a href="#vozes">Histórias</a>
-            </li>
-            <li>
               <a href="#recrutador">Para empresas</a>
             </li>
             <li>

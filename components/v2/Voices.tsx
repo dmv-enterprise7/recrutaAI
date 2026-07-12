@@ -1,5 +1,9 @@
 'use client'
-/* Recruta AI v2 — Seção 06 · PROVA (depoimentos aguardando casos verificados) · port de src-v2/voices.jsx */
+/* Recruta AI v2 — Seção PROVA (Histórias de recolocação) · port de src-v2/voices.jsx
+   ⚠️ FORA DO AR por decisão de 11/07/2026: só volta quando existirem depoimentos
+   reais, verificados e autorizados (LGPD). Ao remontar em app/page.tsx, renumerar
+   os eyebrows das seções seguintes (Planos/FAQ) e restaurar os links "Histórias"
+   (#vozes) na Navbar e no Footer. Contexto completo no CLAUDE.md do repo. */
 import { SecHead } from './parts'
 
 export function VoicesV2() {

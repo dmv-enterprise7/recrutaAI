@@ -71,7 +71,7 @@ export function PlansV2() {
     <section className="section" id="planos">
       <div className="container">
         <SecHead
-          eyebrow="07 · Planos"
+          eyebrow="06 · Planos"
           title={
             <>
               Comece de graça. <em>Suba quando quiser.</em>

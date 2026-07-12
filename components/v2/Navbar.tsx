@@ -8,7 +8,6 @@ const LINKS: Array<[string, string]> = [
   ['#filtro', 'O filtro invisível'],
   ['#jornada', 'A jornada'],
   ['#wellington', 'Quem te guia'],
-  ['#vozes', 'Histórias'],
   ['#planos', 'Planos'],
 ]
 

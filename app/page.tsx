@@ -8,7 +8,6 @@ import { ImpactV2 } from '@/components/v2/Impact'
 import { JourneyV2 } from '@/components/v2/Journey'
 import { FeaturesV2 } from '@/components/v2/Features'
 import { WellingtonV2 } from '@/components/v2/Wellington'
-import { VoicesV2 } from '@/components/v2/Voices'
 import { PlansV2 } from '@/components/v2/Plans'
 import { FAQV2 } from '@/components/v2/FAQ'
 import { CTAFinalV2, FooterV2, RecStrip } from '@/components/v2/Close'
@@ -28,7 +27,6 @@ export default function Home() {
         <JourneyV2 />
         <FeaturesV2 />
         <WellingtonV2 />
-        <VoicesV2 />
         <PlansV2 />
         <FAQV2 />
         <RecStrip />
