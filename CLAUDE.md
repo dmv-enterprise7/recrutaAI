@@ -11,7 +11,12 @@ Landing page da **Recruta AI** — plataforma de **recolocação/reposicionament
 - **Marca personificada no Wellington Martins** — 20+ anos em multinacionais, Black Belt em planejamento, hoje do lado de quem contrata. **Axcel** = o método dele virado mentor de IA. Palestras/aulas de reposicionamento são Recruta AI (não confundir com o curso PLN — coisas separadas).
 - **Voz:** direto, caloroso sem ser bobo, específico, honesto (a IA erra e a marca admite). NUNCA militar ("soldado/missão"), nunca corporativês, nunca buzzword. Ver `design_handoff_recruta_ai/VOICE.md` no projeto do Claude Design.
 - **Compra é emoção:** narrativa da dor (fila na chuva, currículo na gaveta) > lista de features.
-- **CTAs = WhatsApp** por ora (5522998523511 candidato · Vitor 5521973495805 recrutador — `lib/constants.ts`). Futuro (Fase B): app em `app.recrutaai.ia.br` vira destino principal.
+- **CTAs:** Navbar tem **Entrar** (`/login`) + **Criar conta grátis** (`/cadastro`) e os planos levam ao checkout do app; hero/CTA final ainda usam WhatsApp (5522998523511). Destinos do app centralizados em `lib/constants.ts` (`APP_URL` = axcel.dmventerprise.com.br hoje → trocar 1 linha quando a Fase B subir `app.recrutaai.ia.br`).
+- **Planos → checkout:** botões vão pra `APP_URL/planos?plano=<basico|axcel|max>` (página pública com checkout Pix/cartão ligado à conta, Phase 65 do app). Grátis → `/cadastro`. NÃO existe link `buy.stripe.com` avulso — o checkout é logado, dentro do app. Slugs: free/basico/axcel/max.
+
+## ⚠️ PENDÊNCIA — Webhook do formulário de recrutador
+
+O form de recrutador (`components/v2/RecruiterForm.tsx`) faz POST pra `RECRUITER_WEBHOOK_URL` (`lib/constants.ts`), hoje apontando pra `https://n8n.dmventerprise.com.br/webhook/recruiter-lead`. **Mariel precisa criar esse webhook no n8n** que: (1) recebe o JSON `{tipo, origem, nome, email, empresa, cidade, telefone, mensagem, enviadoEm}`, (2) dispara e-mail pra **enterprise.dmv7@gmail.com**, (3) tem **CORS liberado pra `https://recrutaai.ia.br`** (senão o browser bloqueia o POST cross-origin). Se o path do webhook for outro, ajustar a constante. Enquanto não existir, o form mostra erro amigável ao enviar.
 
 ## Design (fonte da verdade visual)
 

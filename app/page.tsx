@@ -10,7 +10,8 @@ import { FeaturesV2 } from '@/components/v2/Features'
 import { WellingtonV2 } from '@/components/v2/Wellington'
 import { PlansV2 } from '@/components/v2/Plans'
 import { FAQV2 } from '@/components/v2/FAQ'
-import { CTAFinalV2, FooterV2, RecStrip } from '@/components/v2/Close'
+import { CTAFinalV2, FooterV2 } from '@/components/v2/Close'
+import { RecruiterForm } from '@/components/v2/RecruiterForm'
 import { RevealBlurInit } from '@/components/v2/parts'
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
         <WellingtonV2 />
         <PlansV2 />
         <FAQV2 />
-        <RecStrip />
+        <RecruiterForm />
         <CTAFinalV2 />
       </main>
       <FooterV2 />

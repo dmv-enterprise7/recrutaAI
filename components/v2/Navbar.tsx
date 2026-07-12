@@ -2,7 +2,7 @@
 /* Recruta AI v2 — Navbar (port de src-v2/navbar.jsx) */
 import { useState } from 'react'
 import { Logo } from '@/components/brand/Logo'
-import { WA_LINK } from '@/lib/constants'
+import { CADASTRO_URL, LOGIN_URL } from '@/lib/constants'
 
 const LINKS: Array<[string, string]> = [
   ['#filtro', 'O filtro invisível'],
@@ -30,8 +30,11 @@ export function NavbarV2() {
           <a href="#recrutador" className="nav-rec">
             Sou recrutador
           </a>
-          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-primary">
-            Ver meu score grátis
+          <a href={LOGIN_URL} className="nav-login">
+            Entrar
+          </a>
+          <a href={CADASTRO_URL} className="btn btn-primary">
+            Criar conta grátis
           </a>
           <button
             className="nav-mobile-toggle"
@@ -62,9 +65,12 @@ export function NavbarV2() {
         <a href="#recrutador" onClick={() => setOpen(false)}>
           Sou recrutador
         </a>
+        <a href={LOGIN_URL} onClick={() => setOpen(false)}>
+          Entrar
+        </a>
         <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-primary">
-            Ver meu score grátis
+          <a href={CADASTRO_URL} className="btn btn-primary" onClick={() => setOpen(false)}>
+            Criar conta grátis
           </a>
         </div>
       </div>

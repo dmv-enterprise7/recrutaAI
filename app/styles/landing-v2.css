@@ -1930,3 +1930,179 @@ a:hover { color: var(--emerald-500); }
   .an--static .rm-card { opacity: 1; transform: none; animation: none !important; }
   .rm-card.is-active .rm-btn--go { animation: none !important; }
 }
+
+/* =============================================================
+   NAV · link "Entrar" (login) — discreto ao lado do CTA
+   ============================================================= */
+.nav-login {
+  font-size: 14px;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding: 8px 4px;
+  transition: color var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+.nav-login:hover { color: var(--ink); }
+@media (max-width: 860px) { .nav-right .nav-login { display: none; } }
+
+/* =============================================================
+   PLANOS · cards horizontais (substitui a lista vertical .menu)
+   ============================================================= */
+.pcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-4);
+  margin-top: var(--s-7);
+  align-items: stretch;
+}
+.pcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-4);
+  padding: var(--s-6) var(--s-5);
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+}
+.pcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--emerald-300); }
+.pcard--feature {
+  background: var(--emerald-900);
+  color: var(--linen);
+  border-color: transparent;
+  box-shadow: var(--shadow-xl);
+}
+.pcard--feature:hover { border-color: transparent; }
+.pcard__badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-300);
+  color: var(--emerald-900);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+.pcard__name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  color: var(--ink-3);
+}
+.pcard--feature .pcard__name { color: var(--emerald-300); }
+.pcard__tag {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--emerald-500);
+  line-height: 1;
+}
+.pcard--feature .pcard__tag { color: var(--gold-300); }
+.pcard__price {
+  font-family: var(--serif-display);
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 2px 0 var(--s-2);
+}
+.pcard__price .pcard__cur { font-size: 20px; color: var(--ink-3); }
+.pcard--feature .pcard__price .pcard__cur { color: var(--emerald-300); }
+.pcard__price small {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin-left: 2px;
+}
+.pcard--feature .pcard__price small { color: var(--emerald-300); }
+.pcard__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+  flex: 1;
+}
+.pcard--feature .pcard__list { color: rgba(244,241,234,0.86); }
+.pcard__list li { display: flex; gap: 8px; align-items: flex-start; }
+.pcard__list li::before {
+  content: "✓";
+  color: var(--emerald-500);
+  font-weight: 700;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.pcard--feature .pcard__list li::before { color: var(--gold-300); }
+.pcard__cta {
+  margin-top: var(--s-2);
+  width: 100%;
+  justify-content: center;
+}
+@media (max-width: 980px) {
+  .pcards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .pcards { grid-template-columns: 1fr; }
+}
+
+/* =============================================================
+   RECRUTADOR · formulário (substitui o card de WhatsApp do Vitor)
+   ============================================================= */
+.rec-form-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--s-7);
+  margin-top: var(--s-7);
+  align-items: start;
+}
+.rec-form-intro h3 {
+  font-family: var(--serif-display);
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 10px 0 12px;
+}
+.rec-form-intro h3 em { font-style: italic; color: var(--emerald-500); }
+.rec-form-intro p { font-size: 15px; color: var(--ink-3); line-height: 1.55; max-width: 42ch; }
+.rec-form-intro .rec-form-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  color: var(--emerald-500);
+}
+.rec-form-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-4);
+  padding: var(--s-6);
+}
+.rec-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
+.rec-form-field { display: flex; flex-direction: column; gap: 6px; }
+.rec-form-field--full { grid-column: 1 / -1; }
+.rec-form-field textarea { resize: vertical; min-height: 74px; font-family: inherit; }
+.rec-form-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--s-4); margin-top: 4px; flex-wrap: wrap; }
+.rec-form-actions .rec-form-note { font-size: 12px; color: var(--ink-3); }
+.rec-form-msg { border-radius: var(--r-2); padding: var(--s-4); font-size: 14px; line-height: 1.5; }
+.rec-form-msg--ok { background: var(--signal-good-bg); color: var(--emerald-700); border: 1px solid var(--emerald-100); }
+.rec-form-msg--err { background: var(--signal-bad-bg); color: #6B221A; border: 1px solid #F3CFC8; }
+@media (max-width: 900px) {
+  .rec-form-wrap { grid-template-columns: 1fr; gap: var(--s-5); }
+  .rec-form-grid { grid-template-columns: 1fr; }
+}
