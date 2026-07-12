@@ -56,7 +56,7 @@ export function RecruiterForm() {
   )
 
   return (
-    <section className="section section--paper" id="recrutador">
+    <section className="section rec-dark" id="recrutador">
       <div className="container">
         <div className="rec-form-wrap">
           <div className="rec-form-intro reveal">
@@ -130,7 +130,7 @@ export function RecruiterForm() {
                 )}
 
                 <div className="rec-form-actions">
-                  <button type="submit" className="btn btn-emerald btn-lg" disabled={status === 'loading'}>
+                  <button type="submit" className="btn btn-gold btn-lg" disabled={status === 'loading'}>
                     <span>{status === 'loading' ? 'Enviando…' : 'Pedir acesso'}</span>
                     {status !== 'loading' && <ArrowIcon />}
                   </button>

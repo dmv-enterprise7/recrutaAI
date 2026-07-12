@@ -2106,3 +2106,60 @@ a:hover { color: var(--emerald-500); }
   .rec-form-wrap { grid-template-columns: 1fr; gap: var(--s-5); }
   .rec-form-grid { grid-template-columns: 1fr; }
 }
+
+/* =============================================================
+   CTA da seção 04 — bloco com frase-lead + botão em destaque
+   ============================================================= */
+.bab__cta--lead { flex-direction: column; gap: var(--s-3); }
+.bab__cta-lead {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink);
+  text-align: center;
+}
+
+/* =============================================================
+   SEÇÃO RECRUTADOR — preto e dourado (retoma o visual do .rec-strip)
+   ============================================================= */
+.rec-dark {
+  background: var(--ink);
+  color: var(--linen);
+  border-bottom: 1px solid rgba(244,241,234,0.08);
+}
+.rec-dark .rec-form-eyebrow { color: var(--gold-300); }
+.rec-dark .rec-form-intro h3 { color: var(--linen); }
+.rec-dark .rec-form-intro h3 em { color: var(--gold-300); font-style: italic; }
+.rec-dark .rec-form-intro p { color: rgba(244,241,234,0.72); }
+
+.rec-dark .rec-form-card {
+  background: rgba(244,241,234,0.04);
+  border: 1px solid rgba(217,182,106,0.28);
+  border-radius: var(--r-4);
+  padding: var(--s-6);
+}
+.rec-dark .label-up { color: rgba(244,241,234,0.7); }
+.rec-dark .input {
+  background: rgba(244,241,234,0.06);
+  border-color: rgba(244,241,234,0.16);
+  color: var(--linen);
+}
+.rec-dark .input::placeholder { color: rgba(244,241,234,0.4); }
+.rec-dark .input:focus {
+  border-color: var(--gold-300);
+  box-shadow: 0 0 0 3px rgba(217,182,106,0.18);
+}
+.rec-dark .rec-form-note { color: rgba(244,241,234,0.6); }
+.rec-dark .rec-form-msg--ok {
+  background: rgba(31,111,74,0.18);
+  color: #CDE8D6;
+  border-color: rgba(111,168,138,0.4);
+}
+.rec-dark .rec-form-msg--err {
+  background: rgba(178,58,43,0.16);
+  color: #F2C9C2;
+  border-color: rgba(178,58,43,0.4);
+}
+/* success heading em fundo escuro usa dourado no destaque */
+.rec-dark .rec-form-card h3 { color: var(--linen); }
+.rec-dark .rec-form-card h3 em { color: var(--gold-300) !important; }

@@ -2,7 +2,7 @@
 /* Recruta AI v2 — Seção 04 · O QUE VOCÊ RECEBE (bento com mini-telas do produto) · port de src-v2/value.jsx */
 import { useEffect, useRef, useState } from 'react'
 import { WA_LINK } from '@/lib/constants'
-import { Placeholder, SecHead, useInView, type CSSVars } from './parts'
+import { ArrowIcon, Placeholder, SecHead, useInView, type CSSVars } from './parts'
 
 interface CatItem {
   id: string
@@ -587,12 +587,14 @@ export function FeaturesV2() {
             </div>
           ))}
         </div>
-        <p className="fab-foot reveal">
-          Tudo começa pelo seu score.{' '}
-          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener">
-            Veja o seu de graça →
+        <div className="bab__cta bab__cta--lead reveal">
+          <span className="bab__cta-lead">Tudo começa pelo seu score.</span>
+          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+            <span>Ver meu score grátis</span>
+            <ArrowIcon />
           </a>
-        </p>
+          <span className="bab__cta-note">Grátis · 2 min · sem cartão</span>
+        </div>
       </div>
     </section>
   )

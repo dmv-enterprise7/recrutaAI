@@ -1,7 +1,8 @@
 'use client'
 /* Recruta AI v2 — Seção 01 · O FILTRO INVISÍVEL (vilão) + sintoma (slider) · port de src-v2/villain.jsx */
 import { useCallback, useRef, useState, type PointerEvent, type KeyboardEvent, type MouseEvent } from 'react'
-import { CountUp, SecHead, useInView, type CSSVars } from './parts'
+import { WA_LINK } from '@/lib/constants'
+import { ArrowIcon, CountUp, SecHead, useInView, type CSSVars } from './parts'
 
 export function VillainV2() {
   const [ref, seen] = useInView({ threshold: 0.3 })
@@ -90,6 +91,14 @@ export function VillainV2() {
         </div>
 
         <CVSlider />
+
+        <div className="bab__cta reveal">
+          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+            <span>Ver onde meu currículo trava</span>
+            <ArrowIcon />
+          </a>
+          <span className="bab__cta-note">Grátis · 2 min · sem cartão</span>
+        </div>
       </div>
     </section>
   )

@@ -1,7 +1,8 @@
 'use client'
 /* Recruta AI v2 — Seção 03 · A JORNADA (linha conectiva animada + números com parallax) · port de src-v2/journey.jsx */
 import { useEffect, useRef } from 'react'
-import { SecHead, useInView } from './parts'
+import { WA_LINK } from '@/lib/constants'
+import { ArrowIcon, SecHead, useInView } from './parts'
 
 interface Step {
   num: string
@@ -99,6 +100,14 @@ export function JourneyV2() {
           {JOURNEY_STEPS.map((s) => (
             <JourneyStep s={s} key={s.num} />
           ))}
+        </div>
+
+        <div className="bab__cta reveal">
+          <a href={WA_LINK('Ver meu score')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+            <span>Começar minha trilha de graça</span>
+            <ArrowIcon />
+          </a>
+          <span className="bab__cta-note">O primeiro passo é o diagnóstico. Sem cartão.</span>
         </div>
       </div>
     </section>
