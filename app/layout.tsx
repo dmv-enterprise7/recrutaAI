@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import './globals.css'
+import './styles/landing-v2.css'
 
 const geist = Geist({
   subsets: ['latin'],
@@ -26,25 +27,25 @@ const SITE_URL = 'https://recrutaai.ia.br'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Recruta AI — Seu currículo deixou de ser invisível',
+  title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
   description:
-    'ATS inteligente que reescreve currículos por vaga e entrega candidatos triados com score explicado. Recrutador é grátis.',
+    'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
   alternates: { canonical: '/' },
   icons: { icon: '/logos/favicon.svg' },
   openGraph: {
     type: 'website',
     url: SITE_URL,
     siteName: 'Recruta AI',
-    title: 'Recruta AI — Seu currículo deixou de ser invisível',
+    title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
     description:
-      'ATS inteligente que reescreve currículos por vaga e entrega candidatos triados com score explicado. Recrutador é grátis.',
+      'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
     locale: 'pt_BR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Recruta AI — Seu currículo deixou de ser invisível',
+    title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
     description:
-      'ATS inteligente que reescreve currículos por vaga e entrega candidatos triados com score explicado.',
+      'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
   },
   robots: { index: true, follow: true },
 }
