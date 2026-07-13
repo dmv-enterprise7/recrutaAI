@@ -2376,3 +2376,10 @@ a:hover { color: var(--emerald-500); }
   .sc-panel__body { order: 1; }
   .showcase__panel { padding: var(--s-5); }
 }
+
+/* fallback de WhatsApp dentro do erro do form do recrutador */
+.rec-form-fallback {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;
+  font-weight: 600; color: #6B221A; text-decoration: underline; text-underline-offset: 2px;
+}
+.rec-dark .rec-form-fallback { color: var(--gold-300); }

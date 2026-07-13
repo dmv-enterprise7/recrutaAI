@@ -1,8 +1,8 @@
 'use client'
 /* Recruta AI v2 — Faixa RECRUTADOR (formulário → webhook n8n → e-mail enterprise.dmv7@gmail.com) */
 import { useCallback, useState, type ChangeEvent, type FormEvent } from 'react'
-import { RECRUITER_WEBHOOK_URL } from '@/lib/constants'
-import { ArrowIcon } from './parts'
+import { RECRUITER_WEBHOOK_URL, VITOR_WA } from '@/lib/constants'
+import { ArrowIcon, WaIcon } from './parts'
 
 interface FormState {
   nome: string
@@ -125,7 +125,13 @@ export function RecruiterForm() {
 
                 {status === 'error' && errorMsg && (
                   <div className="rec-form-field--full">
-                    <div className="rec-form-msg rec-form-msg--err">{errorMsg}</div>
+                    <div className="rec-form-msg rec-form-msg--err">
+                      {errorMsg}
+                      <a href={VITOR_WA} target="_blank" rel="noopener" className="rec-form-fallback">
+                        <WaIcon size={14} />
+                        <span>Falar com o Vitor no WhatsApp</span>
+                      </a>
+                    </div>
                   </div>
                 )}
 

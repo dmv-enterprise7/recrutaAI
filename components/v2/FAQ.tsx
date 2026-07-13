@@ -1,7 +1,7 @@
 'use client'
 /* Recruta AI v2 — Seção 08 · FAQ (quebra de objeções antes do CTA final) · port de src-v2/faq.jsx */
 import { useState } from 'react'
-import { WA_LINK } from '@/lib/constants'
+import { WA_TEXT } from '@/lib/constants'
 import { SecHead } from './parts'
 
 const FAQ_V2: Array<{ q: string; a: string }> = [
@@ -48,7 +48,7 @@ export function FAQV2() {
             />
             <p className="faq2__note">
               Ficou outra dúvida?{' '}
-              <a href={WA_LINK('Dúvida')} target="_blank" rel="noopener">
+              <a href={WA_TEXT('Oi! Tenho uma dúvida sobre o Recruta AI.')} target="_blank" rel="noopener">
                 Chama a gente no WhatsApp
               </a>
               . Respondemos gente como gente.
