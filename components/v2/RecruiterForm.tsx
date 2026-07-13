@@ -49,7 +49,7 @@ export function RecruiterForm() {
         setStatus('success')
       } catch {
         setStatus('error')
-        setErrorMsg('Não consegui enviar agora. Tenta de novo em instantes — ou chama a gente no WhatsApp.')
+        setErrorMsg('Não consegui enviar agora. Tenta de novo em instantes, ou chama a gente no WhatsApp.')
       }
     },
     [form],
@@ -66,7 +66,7 @@ export function RecruiterForm() {
             </h3>
             <p>
               Conta pra gente sobre a sua operação. A DMV avalia cada pedido pra manter a qualidade do pool e te
-              retorna em até 1 dia útil com o acesso ao painel — sem deck, sem reunião de uma hora.
+              retorna em até 1 dia útil com o acesso ao painel, sem deck e sem reunião de uma hora.
             </p>
           </div>
 

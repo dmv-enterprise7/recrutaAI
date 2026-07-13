@@ -37,7 +37,7 @@ export function VoicesV2() {
               <p className="voice__quote voice__quote--sm voice__quote--ph">
                 “Segunda história curta, de função diferente da primeira.”
               </p>
-              <div className="voice__ph-note">nome · função · base — só com consentimento</div>
+              <div className="voice__ph-note">nome · função · base · só com consentimento</div>
             </div>
           </div>
         </div>

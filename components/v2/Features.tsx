@@ -139,7 +139,7 @@ function FrenteDemo() {
         </div>
       </div>
       <div className="demo-fr__invite">
-        <span className="demo-fr__dot" /> “Vi seu perfil e quero te chamar pro processo.” — recrutador · UTC
+        <span className="demo-fr__dot" /> “Vi seu perfil e quero te chamar pro processo.” Recrutador · UTC
       </div>
     </div>
   )
@@ -167,7 +167,7 @@ const FEATURES: Feature[] = [
     desc: (
       <>
         Você sobe seu currículo e em 2 minutos recebe uma nota de 0 a 100 nos <b>6 eixos que a triagem realmente olha</b>.
-        Cada eixo vem com o que te derruba e a <b>ação exata pra subir</b> — com quantos pontos você ganha. Sem
+        Cada eixo vem com o que te derruba e a <b>ação exata pra subir</b>, com quantos pontos você ganha. Sem
         caixa-preta.
       </>
     ),
@@ -183,7 +183,7 @@ const FEATURES: Feature[] = [
     desc: (
       <>
         A IA pega a sua história real e reescreve na linguagem que o <b>óleo &amp; gás contrata</b>: os verbos certos, as
-        métricas de PCM, as palavras-chave que o ATS procura. <b>Nada é inventado</b> — cada linha vem da sua experiência
+        métricas de PCM, as palavras-chave que o ATS procura. <b>Nada é inventado</b>: cada linha vem da sua experiência
         e você aprova antes de sair.
       </>
     ),
@@ -199,7 +199,7 @@ const FEATURES: Feature[] = [
     desc: (
       <>
         Antes mesmo de te chamarem, você <b>ensaia a entrevista por voz</b> com o Axcel. Ele puxa perguntas reais da
-        vaga, ouve sua resposta e te devolve o que soou bem e o que ajustar — no seu tempo, quantas vezes precisar.
+        vaga, ouve sua resposta e te devolve o que soou bem e o que ajustar, no seu tempo, quantas vezes precisar.
       </>
     ),
     demo: <InterviewDemo />,
@@ -214,7 +214,7 @@ const FEATURES: Feature[] = [
     desc: (
       <>
         A gente garimpa vagas específicas de óleo &amp; gás em várias fontes e cruza com o <b>seu perfil e a sua
-        região</b>. As que combinam chegam pra você — e as parecidas também. Você para de rodar site atrás de site no
+        região</b>. As que combinam chegam pra você, e as parecidas também. Você para de rodar site atrás de site no
         escuro.
       </>
     ),
@@ -230,7 +230,7 @@ const FEATURES: Feature[] = [
     desc: (
       <>
         Quando seu perfil está forte e alinhado, o jogo inverte: em vez de você caçar vaga, o <b>recrutador te encontra</b>{' '}
-        no banco de talentos e te convida pro processo — mesmo sem você ter se inscrito.
+        no banco de talentos e te convida pro processo, mesmo sem você ter se inscrito.
       </>
     ),
     demo: <FrenteDemo />,
@@ -253,7 +253,7 @@ export function FeaturesV2() {
               A gente te coloca <em>na frente</em> do mercado.
             </>
           }
-          sub="Clique em cada etapa pra ver como funciona. Não é uma lista de vagas — é o preparo que faz você disputar de igual pra igual."
+          sub="Clique em cada etapa pra ver como funciona. Não é uma lista de vagas. É o preparo que faz você disputar de igual pra igual."
         />
 
         <div className="showcase reveal">

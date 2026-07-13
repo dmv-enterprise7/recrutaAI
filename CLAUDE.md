@@ -12,7 +12,7 @@ Landing page da **Recruta AI** — plataforma de **recolocação/reposicionament
 - **Voz:** direto, caloroso sem ser bobo, específico, honesto (a IA erra e a marca admite). NUNCA militar ("soldado/missão"), nunca corporativês, nunca buzzword. Ver `design_handoff_recruta_ai/VOICE.md` no projeto do Claude Design.
 - **Compra é emoção:** narrativa da dor (fila na chuva, currículo na gaveta) > lista de features.
 - **CTAs:** Navbar tem **Entrar** (`/login`) + **Criar conta grátis** (`/cadastro`) e os planos levam ao checkout do app; hero/CTA final ainda usam WhatsApp (5522998523511). Destinos do app centralizados em `lib/constants.ts` (`APP_URL` = axcel.dmventerprise.com.br hoje → trocar 1 linha quando a Fase B subir `app.recrutaai.ia.br`).
-- **Planos → checkout:** botões vão pra `APP_URL/planos?plano=<basico|axcel|max>` (página pública com checkout Pix/cartão ligado à conta, Phase 65 do app). Grátis → `/cadastro`. NÃO existe link `buy.stripe.com` avulso — o checkout é logado, dentro do app. Slugs: free/basico/axcel/max.
+- **Planos → checkout:** botões vão pra `APP_URL/planos?plano=<basico|axcel|max>` (página pública com checkout Pix/cartão ligado à conta, Phase 65 do app). Grátis → `/cadastro`. Gateway é **Asaas** (não Stripe). NÃO existe link de checkout avulso: o Asaas gera a URL da sessão na hora, logado, dentro do app (`POST /checkouts`). Slugs: free/basico/axcel/max.
 
 ## ⚠️ PENDÊNCIA — Webhook do formulário de recrutador
 

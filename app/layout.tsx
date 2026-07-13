@@ -27,7 +27,7 @@ const SITE_URL = 'https://recrutaai.ia.br'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
+  title: 'Recruta AI: você fez tudo certo. Faltou ser visto.',
   description:
     'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
   alternates: { canonical: '/' },
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     siteName: 'Recruta AI',
-    title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
+    title: 'Recruta AI: você fez tudo certo. Faltou ser visto.',
     description:
       'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
     locale: 'pt_BR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Recruta AI — Você fez tudo certo. Faltou ser visto.',
+    title: 'Recruta AI: você fez tudo certo. Faltou ser visto.',
     description:
       'Você fez tudo certo e mesmo assim ficou de fora. A Recruta AI te tira da invisibilidade: diagnostica onde você trava, te posiciona com o método do Wellington e te coloca na frente de quem contrata.',
   },
