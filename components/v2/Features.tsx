@@ -5,7 +5,7 @@
    aumenta outro. Demos no estilo calmo do painel de score. */
 import { useState, type ReactNode } from 'react'
 import { Mic, PenLine, Radar, ScanLine, TrendingUp, type LucideIcon } from 'lucide-react'
-import { WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL } from '@/lib/constants'
 import { ArrowIcon, SecHead } from './parts'
 
 /* ============================ DEMOS (limpas, estáticas) ============================ */
@@ -298,7 +298,7 @@ export function FeaturesV2() {
                 </span>
                 <h3 className="sc-panel__title">{f.title}</h3>
                 <p className="sc-panel__desc">{f.desc}</p>
-                <a href={WA_TEXT(f.wa)} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+                <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
                   <span>{f.cta}</span>
                   <ArrowIcon />
                 </a>

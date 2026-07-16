@@ -1,7 +1,7 @@
 'use client'
 /* Recruta AI v2 — Seção 01 · O FILTRO INVISÍVEL (vilão) + sintoma (slider) · port de src-v2/villain.jsx */
 import { useCallback, useRef, useState, type PointerEvent, type KeyboardEvent, type MouseEvent } from 'react'
-import { WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL } from '@/lib/constants'
 import { ArrowIcon, CountUp, SecHead, useInView, type CSSVars } from './parts'
 
 export function VillainV2() {
@@ -93,7 +93,7 @@ export function VillainV2() {
         <CVSlider />
 
         <div className="bab__cta reveal">
-          <a href={WA_TEXT('Oi! Quero ver o que trava meu currículo no filtro (score grátis).')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+          <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
             <span>Ver onde meu currículo trava</span>
             <ArrowIcon />
           </a>

@@ -1,7 +1,7 @@
 'use client'
 /* Recruta AI v2 — Hero (comunidade em órbita, "sistema solar") · port de src-v2/hero.jsx */
 import { useEffect, useState } from 'react'
-import { WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL, WA_TEXT } from '@/lib/constants'
 import { ArrowIcon, WaIcon, type CSSVars } from './parts'
 
 /* pool de perfis fictícios — grande variedade pra sensação de comunidade real */
@@ -118,7 +118,7 @@ export function HeroV2() {
             &amp; gás contrata e te coloca na frente das vagas certas. Todo dia.
           </p>
           <div className="hero-v2__ctas">
-            <a href={WA_TEXT('Oi! Quero ver meu score grátis no Recruta AI.')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+            <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
               <span>Ver meu score grátis</span>
               <ArrowIcon />
             </a>

@@ -1,7 +1,7 @@
 'use client'
 /* Recruta AI v2 — Recrutador (faixa) + CTA final + Footer · port de src-v2/close.jsx */
 import { Logo } from '@/components/brand/Logo'
-import { VITOR_WA, WA_NUMBER, WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL, VITOR_WA, WA_NUMBER, WA_TEXT } from '@/lib/constants'
 import { ArrowIcon, WaIcon } from './parts'
 
 export function RecStrip() {
@@ -49,7 +49,7 @@ export function CTAFinalV2() {
           seu currículo está invisível.
         </p>
         <div className="cta-v2__ctas">
-          <a href={WA_TEXT('Oi! Quero ver meu score grátis no Recruta AI.')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+          <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
             <span>Quero procurar uma oportunidade</span>
             <ArrowIcon />
           </a>
@@ -102,7 +102,7 @@ export function FooterV2() {
               <a href="#recrutador">Para empresas</a>
             </li>
             <li>
-              <a href={WA_TEXT('Oi! Quero ver meu score grátis no Recruta AI.')} target="_blank" rel="noopener">
+              <a href={LOGIN_URL} target="_blank" rel="noopener">
                 Ver meu score grátis
               </a>
             </li>

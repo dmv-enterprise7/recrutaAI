@@ -1,7 +1,7 @@
 'use client'
 /* Recruta AI v2 — Seção 03 · A JORNADA (linha conectiva animada + números com parallax) · port de src-v2/journey.jsx */
 import { useEffect, useRef } from 'react'
-import { WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL } from '@/lib/constants'
 import { ArrowIcon, SecHead, useInView } from './parts'
 
 interface Step {
@@ -103,7 +103,7 @@ export function JourneyV2() {
         </div>
 
         <div className="bab__cta reveal">
-          <a href={WA_TEXT('Oi! Quero começar minha trilha de reposicionamento no Recruta AI.')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+          <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
             <span>Começar minha trilha de graça</span>
             <ArrowIcon />
           </a>

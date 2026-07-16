@@ -1,6 +1,6 @@
 'use client'
 /* Recruta AI v2 — Seção 02 · A VIRADA (de → para, encadeado) · port de src-v2/value.jsx */
-import { WA_TEXT } from '@/lib/constants'
+import { LOGIN_URL } from '@/lib/constants'
 import { ArrowIcon, SecHead } from './parts'
 
 const VIRA_ROWS: Array<[string, string]> = [
@@ -40,7 +40,7 @@ export function ValueV2() {
           ))}
         </div>
         <div className="bab__cta reveal">
-          <a href={WA_TEXT('Oi! Quero sair da invisibilidade e ver meu score no Recruta AI.')} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
+          <a href={LOGIN_URL} target="_blank" rel="noopener" className="btn btn-emerald btn-lg">
             <span>Quero sair da invisibilidade</span>
             <ArrowIcon />
           </a>
