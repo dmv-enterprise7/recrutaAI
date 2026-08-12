@@ -37,7 +37,7 @@ export function RecruiterHeader() {
             <a className="rl-lnk-entrar" href={LOGIN_URL} target="_blank" rel="noopener">
               Entrar
             </a>
-            <a className="rl-btn rl-btn--pri rl-btn--sm" href="#acesso">
+            <a className="rl-btn rl-btn--ink rl-btn--sm" href="#acesso">
               Pedir acesso
             </a>
           </div>
@@ -73,7 +73,7 @@ export function RecruiterHeader() {
           <a className="rl-lnk-entrar" href={LOGIN_URL} target="_blank" rel="noopener" onClick={close}>
             Entrar
           </a>
-          <a className="rl-btn rl-btn--pri" href="#acesso" onClick={close}>
+          <a className="rl-btn rl-btn--ink" href="#acesso" onClick={close}>
             Pedir acesso
           </a>
         </div>
