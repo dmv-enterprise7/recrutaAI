@@ -1950,7 +1950,8 @@ a:hover { color: var(--emerald-500); }
    ============================================================= */
 .pcards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Ago/2026: 3 cards (Grátis + plano completo mensal + trimestral), não mais 4. */
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--s-4);
   margin-top: var(--s-7);
   align-items: stretch;
@@ -2026,6 +2027,16 @@ a:hover { color: var(--emerald-500); }
   margin-left: 2px;
 }
 .pcard--feature .pcard__price small { color: var(--emerald-300); }
+/* Traduz o trimestral em preço mensal — sem isto o R$ 99 parece mais caro que o
+   R$ 44,90 ao lado, que é exatamente a leitura errada. */
+.pcard__note {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin-top: -6px;
+  margin-bottom: 2px;
+}
+.pcard--feature .pcard__note { color: rgba(244,241,234,0.72); }
 .pcard__list {
   list-style: none;
   padding: 0;

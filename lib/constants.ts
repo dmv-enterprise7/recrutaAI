@@ -23,9 +23,24 @@ export const LOGIN_URL = `${APP_URL}/login`
 export const CADASTRO_URL = `${APP_URL}/cadastro`
 
 /* Página pública de planos (checkout Pix/cartão ligado à conta).
-   slug: 'basico' | 'axcel' | 'max' — casa com recruta_ai.plano no app. */
-export const planosUrl = (slug?: 'basico' | 'axcel' | 'max') =>
-  `${APP_URL}/planos${slug ? `?plano=${slug}` : ''}`
+
+   Desde ago/2026 existe UM plano pago só, vendido em dois ciclos (mensal e
+   trimestral). O slug segue 'max' porque é o valor de recruta_ai.plano no app —
+   role, gating e provisionamento não mudaram; o que mudou foi a vitrine.
+   'basico' e 'axcel' viraram legado: ninguém novo assina, mas quem já assinava
+   manteve o preço. Não usar nos CTAs.
+
+   `ciclo` pré-seleciona o seletor da /planos (o app valida contra a união
+   literal e ignora valor inválido). Sem ele, a página abre em mensal. */
+export const planosUrl = (
+  slug?: 'basico' | 'axcel' | 'max',
+  ciclo?: 'mensal' | 'trimestral',
+) => {
+  const qs = [slug && `plano=${slug}`, ciclo && `ciclo=${ciclo}`]
+    .filter(Boolean)
+    .join('&')
+  return `${APP_URL}/planos${qs ? `?${qs}` : ''}`
+}
 
 /* Webhook n8n que recebe o lead do recrutador e dispara e-mail
    para enterprise.dmv7@gmail.com. Criar em n8n.dmventerprise.com.br

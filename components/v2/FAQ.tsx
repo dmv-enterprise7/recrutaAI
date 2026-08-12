@@ -7,7 +7,7 @@ import { SecHead } from './parts'
 const FAQ_V2: Array<{ q: string; a: string }> = [
   {
     q: 'É grátis mesmo? Tem pegadinha?',
-    a: 'Ver seu score é grátis e não pede cartão. Candidatar-se às vagas também é grátis, em qualquer plano. A análise completa dos 6 eixos, com o que melhorar, entra a partir do Basic (R$ 19,90/mês).',
+    a: 'Ver seu score é grátis e não pede cartão. Candidatar-se às vagas também é grátis, em qualquer plano. A análise completa dos 6 eixos, com o que melhorar, entra no plano completo (R$ 44,90/mês ou R$ 99 a cada 3 meses).',
   },
   {
     q: 'Funciona pra minha função?',

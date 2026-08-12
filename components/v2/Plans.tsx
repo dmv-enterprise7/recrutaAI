@@ -6,6 +6,10 @@ import { SecHead } from './parts'
 interface Plan {
   name: string
   price: string | null
+  /** Sufixo do preço: '/mês' por padrão. O trimestral cobra uma vez por 3 meses. */
+  unit?: string
+  /** Linha fina sob o preço — usada pra traduzir o trimestral em preço mensal. */
+  note?: string
   tag: string
   items: string[]
   cta: string
@@ -13,6 +17,22 @@ interface Plan {
   feature?: boolean
   badge?: string
 }
+
+/**
+ * Ago/2026 — os 4 degraus (Grátis / Basic 19,90 / Axcel+ 49,90 / Max 79,90) viraram
+ * DOIS: grátis e o plano completo. O que era o Max, com tudo dentro, passou a custar
+ * menos que o antigo Axcel+ do meio. Os dois cards pagos são o MESMO plano em ciclos
+ * diferentes — por isso a lista de itens não se repete no trimestral: ele diz "tudo
+ * do plano completo" e gasta o espaço com a economia, que é a razão de existir dele.
+ */
+const ITENS_PLANO_COMPLETO = [
+  'Análise completa: os 6 eixos e o que arrumar',
+  'A IA reescreve sua história na língua do mercado',
+  'Currículo sob medida pra cada vaga',
+  'Treino de entrevista por voz',
+  'LinkedIn otimizado e chat com o Axcel na hora',
+  'Seu perfil no banco de talentos, com prioridade no ranking',
+]
 
 const PLANS_V2: Plan[] = [
   {
@@ -24,30 +44,28 @@ const PLANS_V2: Plan[] = [
     href: CADASTRO_URL,
   },
   {
-    name: 'Basic',
-    price: '19,90',
-    tag: 'entender e arrumar',
-    items: ['Análise completa: os 6 eixos e o que arrumar', '3 vagas do seu interesse por dia no e-mail', 'Contato direto quando o recrutador te aprova'],
-    cta: 'Assinar Basic',
-    href: planosUrl('basico'),
-  },
-  {
-    name: 'Axcel+',
-    price: '49,90',
-    tag: 'a mentoria',
+    name: 'Completo',
+    price: '44,90',
+    tag: 'tudo, todo mês',
     feature: true,
     badge: 'Recomendado',
-    items: ['Tudo do Basic', 'A IA reescreve sua história na língua do mercado', 'Seu perfil no banco de talentos', 'LinkedIn otimizado', 'Chat com o Axcel na hora'],
-    cta: 'Assinar Axcel+',
-    href: planosUrl('axcel'),
+    items: ITENS_PLANO_COMPLETO,
+    cta: 'Assinar por mês',
+    href: planosUrl('max', 'mensal'),
   },
   {
-    name: 'Max',
-    price: '79,90',
-    tag: 'chegar na frente',
-    items: ['Tudo do Axcel+', 'Currículo sob medida pra cada vaga', 'Treino de entrevista por voz', 'Prioridade no ranking das vagas'],
-    cta: 'Assinar Max',
-    href: planosUrl('max'),
+    name: 'Completo · 3 meses',
+    price: '99',
+    unit: '/3 meses',
+    note: 'R$ 33 por mês — economia de R$ 35,70',
+    tag: 'o mesmo plano, mais barato',
+    items: [
+      'Tudo do plano completo',
+      'Pagamento único, sem renovação automática',
+      'Tempo de sobra pra trilha inteira de reposicionamento',
+    ],
+    cta: 'Assinar 3 meses',
+    href: planosUrl('max', 'trimestral'),
   },
 ]
 
@@ -59,10 +77,10 @@ export function PlansV2() {
           eyebrow="06 · Planos"
           title={
             <>
-              Comece de graça. <em>Suba quando quiser.</em>
+              Comece de graça. <em>Depois é um plano só.</em>
             </>
           }
-          sub="Cada plano é um degrau da mesma jornada. Ver seu score é grátis e não pede cartão. Daí você só sobe se fizer sentido pra você."
+          sub="Acabaram os degraus: quem assina leva tudo. Ver seu score continua grátis e não pede cartão. Se fizer sentido, você escolhe pagar por mês ou a cada 3 meses — mais barato."
         />
         <div className="pcards reveal">
           {PLANS_V2.map((p) => (
@@ -75,7 +93,7 @@ export function PlansV2() {
                   <>
                     <span className="pcard__cur">R$</span>
                     {p.price}
-                    <small>/mês</small>
+                    <small>{p.unit ?? '/mês'}</small>
                   </>
                 ) : (
                   <>
@@ -83,6 +101,7 @@ export function PlansV2() {
                   </>
                 )}
               </div>
+              {p.note && <div className="pcard__note">{p.note}</div>}
               <ul className="pcard__list">
                 {p.items.map((it) => (
                   <li key={it}>{it}</li>
