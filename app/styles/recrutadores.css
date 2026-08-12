@@ -75,17 +75,28 @@
   background: rgba(244, 241, 234, 0.86); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
-.rl-hdr__in { height: 100%; display: flex; align-items: center; gap: 28px; }
-.rl-nav { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+/* Mesma divisão de 3 blocos da navbar principal (.nav-inner): logo | links | ações,
+   com justify-content:space-between — não empurrar tudo pra direita com margin-left:auto,
+   senão os links do meio colam nos botões em vez de ficarem espalhados como na home. */
+.rl-hdr__in { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.rl-nav { display: flex; align-items: center; gap: 22px; }
 .rl-nav a { white-space: nowrap; }
-.rl .rl-navlink { font-size: 14.5px; color: var(--ink-2); }
-.rl .rl-navlink:hover { color: var(--emerald-700); }
-.rl-hdr__acts { display: flex; align-items: center; gap: 14px; margin-left: 8px; }
+.rl .rl-navlink { font-size: 14px; color: var(--ink-2); }
+.rl .rl-navlink:hover { color: var(--ink); }
+.rl-hdr__acts { display: flex; align-items: center; gap: 14px; }
 .rl .rl-lnk-cand {
   font-size: 14.5px; color: var(--ink-3);
-  border-bottom: 1px solid var(--line); padding-bottom: 2px;
+  border-bottom: 1px solid transparent; padding-bottom: 2px;
+  transition: color .16s ease, border-color .16s ease;
 }
-.rl .rl-lnk-cand:hover { color: var(--ink); border-color: var(--ink-3); }
+.rl .rl-lnk-cand:hover { color: var(--ink); border-color: var(--line); }
+/* Mesmo tratamento do "Entrar" da landing principal (.nav-login): link discreto, sem chrome de botão */
+.rl .rl-lnk-entrar {
+  font-size: 14px; color: var(--ink-2);
+  padding: 8px 4px; white-space: nowrap;
+  transition: color .16s ease;
+}
+.rl .rl-lnk-entrar:hover { color: var(--ink); }
 .rl-burger {
   display: none; margin-left: auto; width: 44px; height: 44px;
   align-items: center; justify-content: center; background: transparent;

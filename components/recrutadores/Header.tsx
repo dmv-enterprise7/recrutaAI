@@ -6,10 +6,9 @@ import { Logo } from '@/components/brand/Logo'
 import { LOGIN_URL } from '@/lib/constants'
 
 const LINKS: Array<[string, string]> = [
-  ['#pilha', 'O limite do volume'],
+  ['#pilha', 'O limite'],
   ['#virada', 'A virada'],
-  ['#recebe', 'O que você recebe'],
-  ['#quem', 'Quem está do outro lado'],
+  ['#recebe', 'O que recebe'],
   ['#perguntas', 'Perguntas'],
 ]
 
@@ -22,7 +21,7 @@ export function RecruiterHeader() {
       <header className="rl-hdr">
         <div className="rl-wrap rl-hdr__in">
           <a href="#topo" aria-label="Recruta AI, ir para o topo" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <Logo width={132} />
+            <Logo width={140} />
           </a>
           <nav className="rl-nav" aria-label="Seções desta página">
             {LINKS.map(([href, label]) => (
@@ -30,18 +29,18 @@ export function RecruiterHeader() {
                 {label}
               </a>
             ))}
-            <div className="rl-hdr__acts">
-              <Link className="rl-lnk-cand" href="/">
-                Sou candidato
-              </Link>
-              <a className="rl-btn rl-btn--sec rl-btn--sm" href={LOGIN_URL} target="_blank" rel="noopener">
-                Entrar
-              </a>
-              <a className="rl-btn rl-btn--pri rl-btn--sm" href="#acesso">
-                Pedir acesso
-              </a>
-            </div>
           </nav>
+          <div className="rl-hdr__acts">
+            <Link className="rl-lnk-cand" href="/">
+              Sou candidato
+            </Link>
+            <a className="rl-lnk-entrar" href={LOGIN_URL} target="_blank" rel="noopener">
+              Entrar
+            </a>
+            <a className="rl-btn rl-btn--pri rl-btn--sm" href="#acesso">
+              Pedir acesso
+            </a>
+          </div>
           <button
             className="rl-burger"
             onClick={() => setOpen((o) => !o)}
@@ -71,7 +70,7 @@ export function RecruiterHeader() {
           </li>
         </ul>
         <div className="rl-acts">
-          <a className="rl-btn rl-btn--sec" href={LOGIN_URL} target="_blank" rel="noopener" onClick={close}>
+          <a className="rl-lnk-entrar" href={LOGIN_URL} target="_blank" rel="noopener" onClick={close}>
             Entrar
           </a>
           <a className="rl-btn rl-btn--pri" href="#acesso" onClick={close}>

@@ -331,6 +331,15 @@ export default function RecrutadoresPage() {
               </div>
             </div>
             <div className="rl-turn__note reveal">
+              <span className="rl-mono">Dois canais, não um só</span>
+              <p>
+                Nossa comunidade já reúne <b>3.000+ profissionais de óleo &amp; gás</b> prontos pra candidatura. Você
+                também pode continuar postando no LinkedIn, indicando e usando outros canais pra atrair mais gente. De
+                onde quer que o candidato venha, o painel organiza a triagem pra você.
+              </p>
+            </div>
+
+            <div className="rl-turn__note reveal">
               <span className="rl-mono">Como entra</span>
               <p>
                 <b>Só entra na sua lista quem se candidatou à sua vaga.</b> Não existe busca livre na base, vitrine de
@@ -360,24 +369,11 @@ export default function RecrutadoresPage() {
                 </div>
                 <div className="rl-fcard__k">Abertura</div>
                 <h3>Publicou a vaga, ela já está no ar.</h3>
-                <p>
-                  Um formulário só: você escreve o título e a descrição em texto livre, escolhe categoria e modalidade
-                  e, se quiser, informa experiência mínima e habilidades. Sem etapa de aprovação no meio.
-                </p>
+                <p>Um formulário só, sem etapa de aprovação no meio: a vaga entra em produção na hora.</p>
                 <ul>
                   <li>
                     <Check />
-                    <span>
-                      O questionário de triagem é opcional e sai da própria vaga, quando você pede. Você edita, remove,
-                      acrescenta e reordena as perguntas
-                    </span>
-                  </li>
-                  <li>
-                    <Check />
-                    <span>
-                      As respostas vêm em texto livre, e o envio é manual, candidato a candidato: você escolhe quem
-                      recebe
-                    </span>
+                    <span>Questionário de triagem opcional, montado a partir da própria vaga</span>
                   </li>
                 </ul>
               </div>
@@ -390,24 +386,11 @@ export default function RecrutadoresPage() {
                 </div>
                 <div className="rl-fcard__k">Leitura</div>
                 <h3>Dois números, cada um no seu lugar.</h3>
-                <p>
-                  O match diz o quanto o candidato tem a ver com a vaga que você abriu. A nota do currículo, explicada
-                  em 6 eixos, diz o quanto o material que ele entregou está completo e legível.
-                </p>
+                <p>Match com a vaga e nota do currículo, sempre separados, com o porquê a um clique.</p>
                 <ul>
                   <li>
                     <Check />
-                    <span>
-                      A análise traz resumo do match, por que deu match, pontos fortes para a vaga, pontos de atenção e
-                      nível de experiência
-                    </span>
-                  </li>
-                  <li>
-                    <Check />
-                    <span>
-                      Os requisitos da vaga são conferidos contra o currículo, com recomendação de avançar ou não. O
-                      PDF original abre a um clique
-                    </span>
+                    <span>Requisitos da vaga conferidos contra o currículo, com o PDF original a um clique</span>
                   </li>
                 </ul>
               </div>
@@ -420,21 +403,11 @@ export default function RecrutadoresPage() {
                 </div>
                 <div className="rl-fcard__k">Condução</div>
                 <h3>Funil de quatro etapas, sempre visível.</h3>
-                <p>
-                  Triagem, shortlist, contatados e recusados, nessa ordem. Quando a vaga é encerrada, aparece um quinto
-                  estágio: descartados. Vale saber que nenhuma dessas passagens tem desfazer.
-                </p>
+                <p>Triagem, shortlist, contatados e recusados. Você sempre sabe onde cada candidato está.</p>
                 <ul>
                   <li>
                     <Check />
                     <span>Ao aprovar, o candidato recebe uma mensagem automática no WhatsApp</span>
-                  </li>
-                  <li>
-                    <Check />
-                    <span>
-                      Na recusa você escolhe o motivo numa lista de quatro opções, guarda uma observação interna
-                      privada e manda a mensagem: escrita à mão, por modelo ou gerada pra você editar
-                    </span>
                   </li>
                 </ul>
               </div>
@@ -448,15 +421,8 @@ export default function RecrutadoresPage() {
                 </div>
                 <div className="rl-fcard__k">Acesso</div>
                 <h3>Curado, e sem preço do seu lado.</h3>
-                <p>
-                  O acesso de quem contrata é liberado por avaliação e é gratuito nesta fase. Não existe plano, tabela
-                  nem checkout do lado do recrutador.
-                </p>
+                <p>Gratuito nesta fase. Sem plano, sem tabela, sem checkout do lado do recrutador.</p>
                 <ul>
-                  <li>
-                    <Check />
-                    <span>A gente avalia cada pedido, e é isso que mantém o pool com qualidade</span>
-                  </li>
                   <li>
                     <Check />
                     <span>A gente responde em até 1 dia útil, sem deck e sem reunião de uma hora</span>
@@ -531,8 +497,7 @@ export default function RecrutadoresPage() {
                 </h3>
                 <p>
                   Wellington Martins é engenheiro de planejamento, com mais de 20 anos em multinacionais e black belt em
-                  planejamento. O painel foi desenhado ao lado de recrutadores de óleo &amp; gás que ele conhece de
-                  perto: eles contaram as travas do dia a dia e ajudaram a definir o que entra na tela.
+                  planejamento. O painel nasceu das travas que ele viu, dos dois lados da contratação.
                 </p>
                 <div className="rl-founder__meta">
                   <span>20+ anos de multinacionais</span>
@@ -570,6 +535,16 @@ export default function RecrutadoresPage() {
               </details>
               <details>
                 <summary>
+                  Preciso escolher entre a base de vocês e meus outros canais?<span className="rl-ic" />
+                </summary>
+                <div className="rl-a">
+                  Não, use os dois. A nossa base já traz <b>3.000+ profissionais de óleo &amp; gás</b> prontos pra
+                  candidatura, e você pode continuar postando no LinkedIn, indicando e usando outros canais pra atrair
+                  mais gente. De onde quer que o candidato venha, o painel organiza a triagem pra você.
+                </div>
+              </details>
+              <details>
+                <summary>
                   Quem pode entrar?<span className="rl-ic" />
                 </summary>
                 <div className="rl-a">
@@ -584,18 +559,8 @@ export default function RecrutadoresPage() {
                 </summary>
                 <div className="rl-a">
                   Da própria base da Recruta AI: profissionais de óleo &amp; gás cadastrados na plataforma, gente que
-                  você não encontra num portal genérico. <b>Só entra na sua lista quem se candidatou</b> à sua vaga.
-                </div>
-              </details>
-              <details>
-                <summary>
-                  Os dois números medem a mesma coisa?<span className="rl-ic" />
-                </summary>
-                <div className="rl-a">
-                  Não, e é por isso que a gente mostra os dois separados. O <b>match</b> diz o quanto aquele candidato
-                  tem a ver com a vaga que você abriu, e só existe dentro dela: muda a vaga, muda o match. A{' '}
-                  <b>nota do currículo</b> diz o quanto o material dele está completo e legível, e continua a mesma em
-                  qualquer vaga.
+                  você não encontra num portal genérico. <b>Só entra na sua lista quem se candidatou</b> à sua vaga. Ele
+                  controla o próprio perfil, e não existe busca livre na base nem exportação de currículo em massa.
                 </div>
               </details>
               <details>
@@ -606,16 +571,6 @@ export default function RecrutadoresPage() {
                   Não. Ela pré-classifica, explica o critério e mostra a conta. <b>Quem avança, contata e recusa é
                   você</b>, sempre. E dá pra discordar do score, abrir o PDF inteiro e seguir com quem estiver mais
                   embaixo na lista.
-                </div>
-              </details>
-              <details>
-                <summary>
-                  O que acontece com os dados do candidato?<span className="rl-ic" />
-                </summary>
-                <div className="rl-a">
-                  Ele criou a conta dele, sabe que está no processo e controla o próprio perfil. Você vê o que é
-                  necessário pra avaliar aquela vaga, e <b>não existe busca livre na base</b> nem exportação de
-                  currículo em massa.
                 </div>
               </details>
               <details>
