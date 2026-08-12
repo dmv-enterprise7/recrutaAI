@@ -18,6 +18,8 @@ Landing page da **Recruta AI** — plataforma de **recolocação/reposicionament
 
 - `/` — landing do **candidato** (componentes `components/v2/*`). A seção "Para quem contrata" (`#recrutador`) é só um **teaser** (`components/v2/RecruiterTeaser.tsx`) que aponta pra página do recrutador.
 - `/recrutadores` — landing de **quem contrata** (`app/recrutadores/page.tsx` + `components/recrutadores/*` + `app/styles/recrutadores.css`, classes com prefixo `.rl-`). Header e rodapé próprios, com link "Sou candidato" de volta pra `/`. O formulário usa os mesmos campos e o mesmo webhook da home, via `lib/recruiterLead.ts`.
+  - **Navbar segue o mesmo padrão visual da home** (2026-08-12): 4 links de seção, "Entrar" como link simples (não botão) e CTA primário em `.rl-btn--ink` (preto, igual ao "Criar conta grátis" da `Navbar.tsx`) — só os CTAs dentro do corpo da página (hero, faixa final) continuam verdes. Header em 3 blocos (`justify-content: space-between`) igual ao `.nav-inner` da home. Objetivo: quem navega da home pra cá não deve sentir que caiu num sistema diferente.
+  - **Mensagem de complemento, não substituição** (2026-08-12): a página deixa explícito que a base de 3.000+ candidatos e outros canais do recrutador (LinkedIn etc.) se somam — não é "só use a nossa base" nem "só use o LinkedIn". Ver bloco "Dois canais, não um só" na seção `#virada` e a pergunta correspondente no FAQ.
 - `components/v2/RecruiterForm.tsx` continua no repo mas **não está montado em nenhuma página** desde que o form completo migrou pra `/recrutadores`.
 
 ### Fonte da verdade do produto (o que pode e não pode ser dito em `/recrutadores`)
