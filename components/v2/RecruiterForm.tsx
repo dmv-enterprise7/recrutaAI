@@ -1,19 +1,11 @@
 'use client'
 /* Recruta AI v2 — Faixa RECRUTADOR (formulário → webhook n8n → e-mail enterprise.dmv7@gmail.com) */
 import { useCallback, useState, type ChangeEvent, type FormEvent } from 'react'
-import { RECRUITER_WEBHOOK_URL, VITOR_WA } from '@/lib/constants'
+import { VITOR_WA } from '@/lib/constants'
+import { EMPTY_LEAD, sendRecruiterLead, type RecruiterLead as FormState } from '@/lib/recruiterLead'
 import { ArrowIcon, WaIcon } from './parts'
 
-interface FormState {
-  nome: string
-  email: string
-  empresa: string
-  cidade: string
-  telefone: string
-  mensagem: string
-}
-
-const EMPTY: FormState = { nome: '', email: '', empresa: '', cidade: '', telefone: '', mensagem: '' }
+const EMPTY: FormState = EMPTY_LEAD
 
 export function RecruiterForm() {
   const [form, setForm] = useState<FormState>(EMPTY)
@@ -35,17 +27,7 @@ export function RecruiterForm() {
       setStatus('loading')
       setErrorMsg(null)
       try {
-        const res = await fetch(RECRUITER_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            tipo: 'recruiter_lead',
-            origem: 'landing recrutaai.ia.br',
-            ...form,
-            enviadoEm: new Date().toISOString(),
-          }),
-        })
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        await sendRecruiterLead(form, 'landing recrutaai.ia.br')
         setStatus('success')
       } catch {
         setStatus('error')

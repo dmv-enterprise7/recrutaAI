@@ -9,5 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    {
+      url: 'https://recrutaai.ia.br/recrutadores/',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }

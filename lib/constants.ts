@@ -15,10 +15,10 @@ export const VITOR_WA = `https://wa.me/5521973495805?text=${encodeURIComponent(
 
 /* ============================================================
    App Recruta AI — destino de login/cadastro/checkout.
-   Hoje: axcel.dmventerprise.com.br. Quando a Fase B subir o
-   app.recrutaai.ia.br, basta trocar APP_URL aqui (1 linha).
+   axcel.dmventerprise.com.br está aposentado e só redireciona:
+   o destino oficial agora é app.recrutaai.ia.br.
    ============================================================ */
-export const APP_URL = 'https://axcel.dmventerprise.com.br'
+export const APP_URL = 'https://app.recrutaai.ia.br'
 export const LOGIN_URL = `${APP_URL}/login`
 export const CADASTRO_URL = `${APP_URL}/cadastro`
 

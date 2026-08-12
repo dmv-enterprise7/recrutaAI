@@ -11,12 +11,26 @@ Landing page da **Recruta AI** — plataforma de **recolocação/reposicionament
 - **Marca personificada no Wellington Martins** — 20+ anos em multinacionais, Black Belt em planejamento, hoje do lado de quem contrata. **Axcel** = o método dele virado mentor de IA. Palestras/aulas de reposicionamento são Recruta AI (não confundir com o curso PLN — coisas separadas).
 - **Voz:** direto, caloroso sem ser bobo, específico, honesto (a IA erra e a marca admite). NUNCA militar ("soldado/missão"), nunca corporativês, nunca buzzword. Ver `design_handoff_recruta_ai/VOICE.md` no projeto do Claude Design.
 - **Compra é emoção:** narrativa da dor (fila na chuva, currículo na gaveta) > lista de features.
-- **CTAs:** Navbar tem **Entrar** (`/login`) + **Criar conta grátis** (`/cadastro`) e os planos levam ao checkout do app; hero/CTA final ainda usam WhatsApp (5522998523511). Destinos do app centralizados em `lib/constants.ts` (`APP_URL` = axcel.dmventerprise.com.br hoje → trocar 1 linha quando a Fase B subir `app.recrutaai.ia.br`).
+- **CTAs:** Navbar tem **Entrar** (`/login`) + **Criar conta grátis** (`/cadastro`) e os planos levam ao checkout do app; hero/CTA final ainda usam WhatsApp (5522998523511). Destinos do app centralizados em `lib/constants.ts` (`APP_URL` = **app.recrutaai.ia.br**; `axcel.dmventerprise.com.br` está aposentado e só redireciona).
 - **Planos → checkout:** botões vão pra `APP_URL/planos?plano=<basico|axcel|max>` (página pública com checkout Pix/cartão ligado à conta, Phase 65 do app). Grátis → `/cadastro`. Gateway é **Asaas** (não Stripe). NÃO existe link de checkout avulso: o Asaas gera a URL da sessão na hora, logado, dentro do app (`POST /checkouts`). Slugs: free/basico/axcel/max.
 
-## ⚠️ PENDÊNCIA — Webhook do formulário de recrutador
+## Rotas
 
-O form de recrutador (`components/v2/RecruiterForm.tsx`) faz POST pra `RECRUITER_WEBHOOK_URL` (`lib/constants.ts`), hoje apontando pra `https://n8n.dmventerprise.com.br/webhook/recruiter-lead`. **Mariel precisa criar esse webhook no n8n** que: (1) recebe o JSON `{tipo, origem, nome, email, empresa, cidade, telefone, mensagem, enviadoEm}`, (2) dispara e-mail pra **enterprise.dmv7@gmail.com**, (3) tem **CORS liberado pra `https://recrutaai.ia.br`** (senão o browser bloqueia o POST cross-origin). Se o path do webhook for outro, ajustar a constante. Enquanto não existir, o form mostra erro amigável ao enviar.
+- `/` — landing do **candidato** (componentes `components/v2/*`). A seção "Para quem contrata" (`#recrutador`) é só um **teaser** (`components/v2/RecruiterTeaser.tsx`) que aponta pra página do recrutador.
+- `/recrutadores` — landing de **quem contrata** (`app/recrutadores/page.tsx` + `components/recrutadores/*` + `app/styles/recrutadores.css`, classes com prefixo `.rl-`). Header e rodapé próprios, com link "Sou candidato" de volta pra `/`. O formulário usa os mesmos campos e o mesmo webhook da home, via `lib/recruiterLead.ts`.
+- `components/v2/RecruiterForm.tsx` continua no repo mas **não está montado em nenhuma página** desde que o form completo migrou pra `/recrutadores`.
+
+### Fonte da verdade do produto (o que pode e não pode ser dito em `/recrutadores`)
+
+- São **dois scores separados**, nunca fundidos: **match candidato × vaga** (0 a 1, = `0.7 × similaridade semântica + 0.3 × proporção de habilidades da vaga`; abaixo de 0,50 não entra na lista) e **nota do currículo / ATS** (0 a 100, 6 eixos com pesos fixos: certificações 30, hard skills 25, experiência 20, idiomas 10, ATS-readability 10, soft skills 5).
+- **Funil:** Triagem → Shortlist → Contatados → Recusados (+ Descartados só com a vaga encerrada). **Não existe desfazer.**
+- **Não existe:** eixos "termos da vaga / tempo embarcado / escopo e escala / questionário", sugestão de pergunta por candidato, localização e tempo de candidatura no card, banco de talentos / vitrine / busca livre na base (desligado em produção, 404), plano pago do lado recrutador.
+- **Números autorizados:** 3.000+ profissionais de óleo & gás, 3 grupos com 1.000+ pessoas cada, score em 6 eixos, 20+ anos de multinacionais, resposta em até 1 dia útil. **Nada de taxa de contratação, tempo de fechamento ou horas economizadas.**
+- **Escrita:** sem travessão, sem emoji, sem "nossa IA / powered by AI", sem prometer contratação ou prazo, sem militarismo, sem "os melhores candidatos", primeira pessoa do plural. **A decisão é sempre do recrutador** precisa estar explícita na página.
+
+## ✅ Webhook do formulário de recrutador — FUNCIONANDO (confirmado 2026-08-12)
+
+O form de recrutador (`lib/recruiterLead.ts` → `RECRUITER_WEBHOOK_URL`, `lib/constants.ts`) faz POST pra `https://n8n.dmventerprise.com.br/webhook/recruiter-lead`. O workflow `dmv-recrutador-lead` (n8n, ativo) recebe o payload, monta um e-mail com o tema Recruta AI e manda pra **enterprise.dmv7@gmail.com** com `replyTo` do recrutador — confirmado lendo o workflow live via n8n-mcp. CORS aberto (`allowedOrigins: "*"`). Sem pendência.
 
 ## Design (fonte da verdade visual)
 

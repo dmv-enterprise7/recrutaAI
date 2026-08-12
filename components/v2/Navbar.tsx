@@ -1,6 +1,7 @@
 'use client'
 /* Recruta AI v2 — Navbar (port de src-v2/navbar.jsx) */
 import { useState } from 'react'
+import Link from 'next/link'
 import { Logo } from '@/components/brand/Logo'
 import { CADASTRO_URL, LOGIN_URL } from '@/lib/constants'
 
@@ -27,9 +28,9 @@ export function NavbarV2() {
           ))}
         </nav>
         <div className="nav-right">
-          <a href="#recrutador" className="nav-rec">
+          <Link href="/recrutadores" className="nav-rec">
             Sou recrutador
-          </a>
+          </Link>
           <a href={LOGIN_URL} className="nav-login">
             Entrar
           </a>
@@ -62,9 +63,9 @@ export function NavbarV2() {
             {label}
           </a>
         ))}
-        <a href="#recrutador" onClick={() => setOpen(false)}>
+        <Link href="/recrutadores" onClick={() => setOpen(false)}>
           Sou recrutador
-        </a>
+        </Link>
         <a href={LOGIN_URL} onClick={() => setOpen(false)}>
           Entrar
         </a>

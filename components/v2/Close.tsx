@@ -1,5 +1,6 @@
 'use client'
 /* Recruta AI v2 — Recrutador (faixa) + CTA final + Footer · port de src-v2/close.jsx */
+import Link from 'next/link'
 import { Logo } from '@/components/brand/Logo'
 import { LOGIN_URL, VITOR_WA, WA_NUMBER, WA_TEXT } from '@/lib/constants'
 import { ArrowIcon, WaIcon } from './parts'
@@ -99,7 +100,7 @@ export function FooterV2() {
           <h4>Ecossistema DMV</h4>
           <ul>
             <li>
-              <a href="#recrutador">Para empresas</a>
+              <Link href="/recrutadores">Para quem contrata</Link>
             </li>
             <li>
               <a href={LOGIN_URL} target="_blank" rel="noopener">
